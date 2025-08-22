@@ -3,7 +3,7 @@
 Public Class Form1
     Dim conn As New MySqlConnection("server=localhost;userid=root;password=omarmazen2004;database=studentsdb")
 
-
+    'test github
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
             conn.Open()
