@@ -1,21 +1,23 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class Form1
-    Dim conn As New MySqlConnection("server=localhost;userid=root;password=omarmazen2004;database=studentsdb")
-
-    'test github
-    'test github 2
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        ' Connection string
+        Dim connStr As String = "server=localhost;user id=root;password=omarmazen2004;database=ClinicDB"
+        Dim conn As New MySqlConnection(connStr)
+
         Try
-            conn.Open()
-            MessageBox.Show("Connection Successful!")
-            conn.Close()
+            conn.Open() ' Try to open connection
+            MessageBox.Show("Database connection successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message)
+            MessageBox.Show("Database connection failed: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            conn.Close() ' Always close connection
         End Try
     End Sub
 End Class
-'test github 3''' ' test github 4
+
+
 
 
 
